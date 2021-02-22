@@ -1,0 +1,9 @@
+apiVersion: skaffold/v2beta12
+kind: Config
+build:
+  artifacts:
+  - image: stocks2mars/scraper
+deploy:
+  kubectl:
+    manifests:
+      - k8s/scraper-*
