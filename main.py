@@ -1,10 +1,14 @@
 import time
 
-def main():
+from actions.scrape import AbstractScraper, TwitterScraper
+
+
+def main(factory: AbstractScraper):
+    scrape = factory.scrape()
     while True:
-        print('hello world')
-        print ('and again...')
-        time.sleep(3)
+        print(scrape)
+        time.sleep(5)
+
 
 if __name__ == '__main__':
-    main()
+    main(TwitterScraper())
