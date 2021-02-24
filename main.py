@@ -1,14 +1,12 @@
+import asyncio
 import time
-
-from actions.scrape import AbstractScraper, TwitterScraper
+from actions.scrape import AbstractScraper, AdHocScraper
 
 
 def main(factory: AbstractScraper):
-    scrape = factory.scrape()
-    while True:
-        print(scrape)
-        time.sleep(5)
+    factory.scrape()
+    time.sleep(5)
 
 
 if __name__ == '__main__':
-    main(TwitterScraper())
+    main(AdHocScraper())
